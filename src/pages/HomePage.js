@@ -40,7 +40,7 @@ export default class HomePage extends Component {
         <ul>
           {shows.map(show => (
             <li key={show.id}>
-              <Link to={`${routes.HOME_PAGE}/${show.id}`}>
+              <Link to={`${routes.MOVIES_PAGE}/${show.id}`}>
                 {show.title ? show.title : show.name}
               </Link>
             </li>

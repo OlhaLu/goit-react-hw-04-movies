@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import SearchMovies from '../components/SearchMovies';
 import tvApiService from '../services/tv-api-service';
 
 export default class ShowMoviesPage extends Component {
@@ -43,29 +44,15 @@ export default class ShowMoviesPage extends Component {
     });
   };
 
-  onChange = e => {
-    this.setState({ value: e.target.value });
-  };
-
-  onSubmit = e => {
-    e.preventDefault();
-
-    this.props.onSearch(this.state.value);
-    this.setState({ value: '' });
-  };
-
   render() {
     const { match } = this.props;
-    const { value } = this.state;
+
     return (
       <div>
         <h1>Movies Page</h1>
-        <form onSubmit={this.onSubmit}>
-          <input type="text" value={value} onChange={this.onChange} />
-          <button type="submit">Search movies</button>
-        </form>
+        <SearchMovies onSearch={this.setSearchQuery} />
         <ul>
-          {this.state.shows.map(show => (
+          {this.state.value.map(show => (
             <li key={show.id}>
               <Link to={`${match.url}/${show.id}`}>{show.name}</Link>
             </li>

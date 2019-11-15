@@ -40,8 +40,7 @@ export default class ShowDetailsPage extends Component {
 
         {shows && (
           <>
-            <img src={shows.image.original} width="280" />
-            <alt>'shows information'</alt>
+            <img src={shows.image.original} width="280" alt={shows.title} />
             <h3>{shows.name}</h3>
             <p>{match.params.showId}</p>
             <p>User score: {shows.popularity}%</p>
