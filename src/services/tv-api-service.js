@@ -40,7 +40,7 @@ const getMovieDetails = movieId =>
       throw err;
     });
 
-const getMovieReviews = movieId =>
+const getMovieCredits = movieId =>
   fetch(
     `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`,
   )
@@ -50,12 +50,12 @@ const getMovieReviews = movieId =>
       }
       throw new Error('not found');
     })
-    .then(data => data.results)
+    .then(data => data.cast)
     .catch(err => {
       throw err;
     });
 
-const getMovieCredits = movieId =>
+const getMovieReviews = movieId =>
   fetch(
     `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${apiKey}`,
   )
@@ -65,7 +65,7 @@ const getMovieCredits = movieId =>
       }
       throw new Error('not found');
     })
-    .then(data => data.cast)
+    .then(data => data.results)
     .catch(err => {
       throw err;
     });

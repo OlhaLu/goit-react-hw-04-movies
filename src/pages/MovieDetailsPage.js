@@ -25,7 +25,7 @@ export default class ShowDetailsPage extends Component {
   fetchDetails = () => {
     const showId = this.props.match.params;
 
-    tvApiService.fetchShowDetails(showId).then(shows => {
+    tvApiService.getMovieDetails(showId).then(shows => {
       this.setState({ shows });
     });
   };

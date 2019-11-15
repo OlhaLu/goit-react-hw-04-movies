@@ -14,7 +14,7 @@ export default class Cast extends Component {
   fetchMovieCast = () => {
     const { movieId } = this.props.match.params;
 
-    tvApiService.fetchMovieCast(movieId).then(cast => {
+    tvApiService.getMovieCredits(movieId).then(cast => {
       this.setState({ cast });
     });
   };
@@ -29,8 +29,8 @@ export default class Cast extends Component {
             {cast.map(item => (
               <li key={uniqid()}>
                 <img
-                  src={`https://image.tmdb.org/t/p/w138_and_h175_face/${item.profile_path}`}
-                  alt="actor"
+                  src={`https://image.tmdb.org/t/p/w300/${item.profile_path}`}
+                  alt="actor_profile"
                   width="100"
                 />
                 <h3>{item.name}</h3>
