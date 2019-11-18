@@ -12,7 +12,7 @@ export default class Cast extends Component {
   }
 
   fetchMovieCast = () => {
-    const { movieId } = this.props.match.params;
+    const { movieId } = this.props.match.params.movieId;
 
     tvApiService.getMovieCredits(movieId).then(cast => {
       this.setState({ cast });

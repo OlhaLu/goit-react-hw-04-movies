@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import qs from 'qs';
 import SearchMovies from '../components/SearchMovies';
+import routes from '../routes';
 import tvApiService from '../services/tv-api-service';
+
+const getQueryPramsFromProps = props =>
+  qs.parse(props.location.search.slice(1));
 
 export default class ShowMoviesPage extends Component {
   state = {
@@ -9,24 +14,19 @@ export default class ShowMoviesPage extends Component {
   };
 
   componentDidMount() {
-    const query = new URLSearchParams(this.props.location.search).get('query');
-
-    if (!query) {
+    const queryParams = getQueryPramsFromProps(this.props);
+    if (!queryParams.query) {
       return;
     }
-
-    tvApiService.searchMovies(query).then(value => {
+  
+    tvApiService.searchMovies(queryParams.query).then(value => {
       this.setState({ value });
     });
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const prevQuery = new URLSearchParams(prevProps.location.search).get(
-      'query',
-    );
-    const nextQuery = new URLSearchParams(this.props.location.search).get(
-      'query',
-    );
+    const { query: prevQuery } = getQueryPramsFromProps(prevProps);
+    const { query: nextQuery } = getQueryPramsFromProps(this.props);
 
     if (prevQuery === nextQuery) {
       return;
@@ -44,17 +44,38 @@ export default class ShowMoviesPage extends Component {
     });
   };
 
+  handleGoHomePage = () => {
+    const { state } = this.props.location;
+    const { history } = this.props;
+    
+    if (state) {
+      this.props.history.push(state.from);
+      return;
+    }
+
+    history.push(`${routes.HOME_PAGE}`);
+  };
+  
   render() {
-    const { match } = this.props;
+    const { location } = this.props;
 
     return (
       <div>
+        <button type="button" onClick={this.handleGoHomePage}>
+        <span> Go Home Page</span>
+        </button>
         <h1>Movies Page</h1>
         <SearchMovies onSearch={this.setSearchQuery} />
         <ul>
           {this.state.value.map(show => (
             <li key={show.id}>
-              <Link to={`${match.url}/${show.id}`}>{show.name}</Link>
+              <Link 
+               to={{
+                pathname: `${routes.MOVIES_PAGE}/${show.id}`,
+                state: { from: location },
+              }}
+              >
+              </Link>
             </li>
           ))}
         </ul>

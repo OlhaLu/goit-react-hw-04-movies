@@ -17,8 +17,13 @@ export default class SearchMovies extends Component {
   render() {
     const { value } = this.state;
     return (
-      <form onSubmit={this.onSubmit} onSearch={this.setSearchQuery}>
-        <input type="text" value={value} onChange={this.onChange} />
+      <form onSubmit={this.onSubmit}>
+        <input 
+        type="text" 
+        value={value} 
+        autoComplete="off" 
+        placeholder="Search  movies..."
+        onChange={this.onChange} />
         <button type="submit">Search movies</button>
       </form>
     );

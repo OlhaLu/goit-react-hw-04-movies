@@ -7,7 +7,7 @@ import tvApiService from '../services/tv-api-service';
 
 export default class ShowDetailsPage extends Component {
   state = {
-    shows: [],
+    shows: null ,
   };
 
   componentDidMount() {
@@ -23,9 +23,9 @@ export default class ShowDetailsPage extends Component {
   }
 
   fetchDetails = () => {
-    const showId = this.props.match.params;
+    const movieId = this.props.match.params.movieId;
 
-    tvApiService.getMovieDetails(showId).then(shows => {
+    tvApiService.getMovieDetails(movieId).then(shows => {
       this.setState({ shows });
     });
   };
@@ -42,9 +42,12 @@ export default class ShowDetailsPage extends Component {
           <>
             <img src={shows.image.original} width="280" alt={shows.title} />
             <h3>{shows.name}</h3>
-            <p>{match.params.showId}</p>
             <p>User score: {shows.popularity}%</p>
-            <p>Overview: {shows.overview}</p>
+            <h3>Overview</h3>
+            <p>{shows.overview}</p>
+            <h3>Genres</h3>
+            <p>{shows.genres.map(item => ` ${item.name} `)}</p>
+            <p>{match.params.showId}</p>
           </>
         )}
         <p>More iInformation</p>
@@ -72,11 +75,11 @@ export default class ShowDetailsPage extends Component {
         </ul>
 
         <Route
-          path={`${match.path}/${routes.MOVIE_CAST_PAGE}`}
+          path={`${match.path}/cast`}
           component={Cast}
         />
         <Route
-          path={`${match.path}/${routes.MOVIE_REVIEWS_PAGE}`}
+          path={`${match.path}/reviews`}
           component={Reviews}
         />
       </div>

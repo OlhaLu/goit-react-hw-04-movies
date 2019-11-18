@@ -11,7 +11,7 @@ export default class Reviews extends Component {
   }
 
   fetchMovieReviewes = () => {
-    const { movieId } = this.props.match.params;
+    const { movieId } = this.props.match.params.movieId;
 
     tvApiService.getMovieReviews(movieId).then(reviews => {
       this.setState({ reviews });

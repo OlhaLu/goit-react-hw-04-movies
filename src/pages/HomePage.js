@@ -22,6 +22,7 @@ export default class HomePage extends Component {
 
   render() {
     const { shows } = this.state;
+    const { location } = this.props;
 
     return (
       <>
@@ -40,7 +41,12 @@ export default class HomePage extends Component {
         <ul>
           {shows.map(show => (
             <li key={show.id}>
-              <Link to={`${routes.MOVIES_PAGE}/${show.id}`}>
+              <Link 
+               to={{
+                pathname: `${routes.MOVIES_PAGE}/${show.id}`,
+                state: { from: location },
+              }}
+                >
                 {show.title ? show.title : show.name}
               </Link>
             </li>
