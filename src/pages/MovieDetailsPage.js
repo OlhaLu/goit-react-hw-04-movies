@@ -7,7 +7,7 @@ import tvApiService from '../services/tv-api-service';
 
 export default class ShowDetailsPage extends Component {
   state = {
-    shows: null ,
+    shows: null,
   };
 
   componentDidMount() {
