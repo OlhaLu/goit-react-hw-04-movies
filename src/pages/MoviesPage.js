@@ -75,6 +75,7 @@ export default class ShowMoviesPage extends Component {
                 state: { from: location },
               }}
               >
+              {show.name ? show.name : show.title}
               </Link>
             </li>
           ))}

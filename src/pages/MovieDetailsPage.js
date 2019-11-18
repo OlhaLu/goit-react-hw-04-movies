@@ -31,25 +31,25 @@ export default class ShowDetailsPage extends Component {
   };
 
   render() {
-    const { shows } = this.state;
     const { match, location } = this.props;
+    const { shows } = this.state;
 
     return (
       <div>
         <h2>Show Movies Details</h2>
 
-        {shows && (
-          <>
-            <img src={shows.image.original} width="280" alt={shows.title} />
-            <h3>{shows.name}</h3>
-            <p>User score: {shows.popularity}%</p>
-            <h3>Overview</h3>
-            <p>{shows.overview}</p>
-            <h3>Genres</h3>
-            <p>{shows.genres.map(item => ` ${item.name} `)}</p>
-            <p>{match.params.showId}</p>
-          </>
-        )}
+    {shows && (
+      <>
+      <img src={shows.image.original} width="280" alt={shows.title} />
+      <h3>{shows.name}</h3>
+      <p>User score: {shows.popularity}%</p>
+      <h3>Overview</h3>
+      <p>{shows.overview}</p>
+      <h3>Genres</h3>
+      <p>{shows.genres.map(item => ` ${item.name} `)}</p>
+      <p>{match.params.showId}</p>
+      </>
+    )}
         <p>More iInformation</p>
         <ul>
           <li>

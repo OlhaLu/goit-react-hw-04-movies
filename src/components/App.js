@@ -11,12 +11,12 @@ const App = () => (
     <div className="App">
       <Navigation />
       <Switch>
-        <Route path={routes.HOME_PAGE} component={HomePage} />
+        <Route exact path={routes.HOME_PAGE} component={HomePage} />
         <Route path={routes.MOVIES_PAGE} component={MoviesPage} />
         <Route path={routes.MOVIE_DETAILS_PAGE} component={MovieDetailsPage} />
         <Redirect to={routes.HOME_PAGE} />
       </Switch>
-    </div>
+    </div> 
   </BrowserRouter>
 );
 
