@@ -4,3 +4,18 @@
     font-weight: bold;
     font-size: 36px;
   }
+
+  .list {
+    line-height: 2rem;
+    color: white;
+    text-align: left;
+    margin-right: 0.5rem;
+    list-style-type: none
+}
+
+.list a {
+  color: #08442e;
+  font-size: 22px;
+  text-decoration: none;
+  list-style-type: none;
+}

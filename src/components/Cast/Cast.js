@@ -24,7 +24,7 @@ export default class Cast extends Component {
 
     return (
       <>
-        {cast.length > 0 && (
+        {cast && (
           <ul>
             {cast.map(item => (
               <li key={uniqid()}>

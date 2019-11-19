@@ -30,7 +30,7 @@ export default class HomePage extends Component {
         <h2 className={styles.header}>Trending Movies for a Week</h2>
         <ul>
           {shows.map(show => (
-            <li key={show.id}>
+            <li key={show.id} className={styles.list}>
               <Link 
                to={{
                 pathname: `${routes.MOVIES_PAGE}/${show.id}`,

@@ -22,5 +22,11 @@
     text-align: left;
     margin-right: 0.5rem;
     list-style-type: none;
-    text-decoration: none;
+   
+}
+
+.list a {
+  color: #082e20;
+  text-decoration: none;
+  font-size: 18px;
 }

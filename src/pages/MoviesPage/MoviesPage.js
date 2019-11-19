@@ -4,7 +4,7 @@ import qs from 'qs';
 import SearchMovies from '../../components/SearchMovies/SearchMovies';
 import routes from '../../routes';
 import tvApiService from '../../services/tv-api-service';
-import styles from './MoviesPage.module.css'
+import styles from './MoviesPage.module.css';
 
 const getQueryPramsFromProps = props =>
   qs.parse(props.location.search.slice(1));
@@ -66,7 +66,7 @@ export default class ShowMoviesPage extends Component {
         type="button" onClick={this.handleGoHomePage}>
         <span> Go Home Page</span>
         </button>
-        <h2 className={styles.header}>Movies Page</h2>
+        <h2 className={styles.header}>Movies Catalog</h2>
         <SearchMovies onSearch={this.setSearchQuery} />
         <ul>
           {this.state.value.map(show => (
