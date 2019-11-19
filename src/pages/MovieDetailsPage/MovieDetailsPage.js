@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import Cast from '../../components/Cast/Cast';
 import Reviews from '../../components/Reviews/Reviews';
+import routes from '../../routes';
 import tvApiService from '../../services/tv-api-service';
+import styles from './MovieDetailsPage.module.css';
 
 export default class ShowDetailsPage extends Component {
   state = {
@@ -29,16 +31,32 @@ export default class ShowDetailsPage extends Component {
     });
   };
 
+  handleGoHomePage = () => {
+    const { state } = this.props.location;
+    const { history } = this.props;
+    
+    if (state) {
+      this.props.history.push(state.from);
+      return;
+    }
+
+    history.push(`${routes.HOME_PAGE}`);
+  };
+
   render() {
     const { match, location } = this.props;
     const { shows } = this.state;
 
     return (
       <div>
+        <button className={styles.button}
+        type="button" onClick={this.handleGoHomePage}>
+        <span> Go Home Page</span>
+        </button>
         <h2>Show Movies Details</h2>
     {shows && (
       <>
-      <img 
+      <img
       src={`https://image.tmdb.org/t/p/w300/${shows.poster_path}`} 
       width="280" 
       alt={shows.title} />
@@ -51,7 +69,7 @@ export default class ShowDetailsPage extends Component {
       <p>{match.params.showId}</p>
       </>
     )}
-        <p>More iInformation</p>
+        <h2>More iInformation</h2>
         <ul>
           <li>
             <Link

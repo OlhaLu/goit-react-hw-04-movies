@@ -12,9 +12,9 @@ const App = () => (
       <Navigation />
       <Switch>
         <Route exact path={routes.HOME_PAGE} component={HomePage} />
+        <Route exact path={routes.MOVIE_DETAILS_PAGE} component={MovieDetailsPage} />
         <Route path={routes.MOVIES_PAGE} component={MoviesPage} />
-        <Route path={routes.MOVIE_DETAILS_PAGE} component={MovieDetailsPage} />
-        <Redirect to={routes.HOME_PAGE} />
+        <Redirect to='/'/>
       </Switch>
     </div> 
   </BrowserRouter>

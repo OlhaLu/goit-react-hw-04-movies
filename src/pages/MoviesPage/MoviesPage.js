@@ -70,10 +70,10 @@ export default class ShowMoviesPage extends Component {
         <SearchMovies onSearch={this.setSearchQuery} />
         <ul>
           {this.state.value.map(show => (
-            <li key={show.id} className={styles.list}>
+            <li key={show.id} className={styles.list}>         
               <Link 
                to={{
-                pathname: `${routes.MOVIES_PAGE}/${show.id}`,
+                pathname: `${routes.MOVIE_PAGE}/${show.id}`,
                 state: { from: location },
               }}
               >
