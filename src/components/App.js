@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import Navigation from './Navigation';
-import HomePage from '../pages/HomePage';
-import MoviesPage from '../pages/MoviesPage';
-import MovieDetailsPage from '../pages/MovieDetailsPage';
+import Navigation from './Navigation/Navigation';
+import HomePage from '../pages/HomePage/HomePage';
+import MoviesPage from '../pages/MoviesPage/MoviesPage';
+import MovieDetailsPage from '../pages/MovieDetailsPage/MovieDetailsPage';
 import routes from '../routes';
 
 const App = () => (

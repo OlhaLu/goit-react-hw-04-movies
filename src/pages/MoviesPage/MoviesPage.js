@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import qs from 'qs';
-import SearchMovies from '../components/SearchMovies';
-import routes from '../routes';
-import tvApiService from '../services/tv-api-service';
+import SearchMovies from '../../components/SearchMovies/SearchMovies';
+import routes from '../../routes';
+import tvApiService from '../../services/tv-api-service';
+import styles from './MoviesPage.module.css'
 
 const getQueryPramsFromProps = props =>
   qs.parse(props.location.search.slice(1));
@@ -61,14 +62,15 @@ export default class ShowMoviesPage extends Component {
 
     return (
       <div>
-        <button type="button" onClick={this.handleGoHomePage}>
+        <button className={styles.button}
+        type="button" onClick={this.handleGoHomePage}>
         <span> Go Home Page</span>
         </button>
-        <h1>Movies Page</h1>
+        <h2 className={styles.header}>Movies Page</h2>
         <SearchMovies onSearch={this.setSearchQuery} />
         <ul>
           {this.state.value.map(show => (
-            <li key={show.id}>
+            <li key={show.id} className={styles.list}>
               <Link 
                to={{
                 pathname: `${routes.MOVIES_PAGE}/${show.id}`,

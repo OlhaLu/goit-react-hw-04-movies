@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import tvApiService from '../services/tv-api-service';
+import tvApiService from '../../services/tv-api-service';
 const uniqid = require('uniqid');
 
 export default class Cast extends Component {

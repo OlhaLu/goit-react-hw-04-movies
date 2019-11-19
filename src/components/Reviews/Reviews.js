@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import tvApiService from '../services/tv-api-service';
+import tvApiService from '../../services/tv-api-service';
 
 export default class Reviews extends Component {
   state = {

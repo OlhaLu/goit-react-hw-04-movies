@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './SearchMovies.module.css'
 
 export default class SearchMovies extends Component {
   state = { value: '' };
@@ -19,12 +20,15 @@ export default class SearchMovies extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <input 
+        className={styles.input}
         type="text" 
         value={value} 
         autoComplete="off" 
         placeholder="Search  movies..."
         onChange={this.onChange} />
-        <button type="submit">Search movies</button>
+        <button 
+        className={styles.submit}
+        type="submit">Search...</button>
       </form>
     );
   }

@@ -25,7 +25,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "https://OlhaLu.github.io/goit-react-hw-04-movies",
   "browserslist": {
     "production": [
       ">0.2%",

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
-import Cast from '../components/Cast';
-import Reviews from '../components/Reviews';
-import routes from '../routes';
-import tvApiService from '../services/tv-api-service';
+import Cast from '../../components/Cast/Cast';
+import Reviews from '../../components/Reviews/Reviews';
+import tvApiService from '../../services/tv-api-service';
 
 export default class ShowDetailsPage extends Component {
   state = {
@@ -37,11 +36,13 @@ export default class ShowDetailsPage extends Component {
     return (
       <div>
         <h2>Show Movies Details</h2>
-
     {shows && (
       <>
-      <img src={shows.image.original} width="280" alt={shows.title} />
-      <h3>{shows.name}</h3>
+      <img 
+      src={`https://image.tmdb.org/t/p/w300/${shows.poster_path}`} 
+      width="280" 
+      alt={shows.title} />
+      <h3>{shows.original_title}</h3>
       <p>User score: {shows.popularity}%</p>
       <h3>Overview</h3>
       <p>{shows.overview}</p>
@@ -55,7 +56,7 @@ export default class ShowDetailsPage extends Component {
           <li>
             <Link
               to={{
-                pathname: `${match.url}/${routes.MOVIE_CAST_PAGE}`,
+                pathname: `${match.url}/cast`,
                 state: { from: location },
               }}
             >
@@ -65,7 +66,7 @@ export default class ShowDetailsPage extends Component {
           <li>
             <Link
               to={{
-                pathname: `${match.url}/${routes.MOVIE_REVIEWS_PAGE}`,
+                pathname: `${match.url}/reviews`,
                 state: { from: location },
               }}
             >

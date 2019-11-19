@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import routes from '../routes';
-import tvApiService from '../services/tv-api-service';
+import routes from '../../routes';
+import tvApiService from '../../services/tv-api-service';
+import styles from './HomePage.module.css'
 
 export default class HomePage extends Component {
   state = {
@@ -26,7 +27,7 @@ export default class HomePage extends Component {
 
     return (
       <>
-        <h2>Trending Movies for a Week</h2>
+        <h2 className={styles.header}>Trending Movies for a Week</h2>
         <ul>
           {shows.map(show => (
             <li key={show.id}>

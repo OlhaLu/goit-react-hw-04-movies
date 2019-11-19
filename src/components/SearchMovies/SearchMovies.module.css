@@ -1,0 +1,36 @@
+.input {
+    color: rgb(97, 95, 95);
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    outline: none;
+    width: auto;
+    min-width: 100%;
+    font-size: 16px;
+    line-height: 2em;
+    font-family: Roboto, Arial, sans-serif;
+    border-bottom: 3px solid #333333;
+    background-color: transparent;
+  }
+
+  .submit {
+  margin: 15px 0;
+  font-family: 'Ubuntu', sans-serif;
+  width: 120px;
+  height: 30px;
+  line-height: 1;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 2px solid rgb(8, 126, 90);
+  background: #fff;
+  color: rgb(51, 50, 53);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .35s;
+}
+
+.submit:hover{
+  background:#fff;
+  color: rgb(8, 126, 90);
+}
