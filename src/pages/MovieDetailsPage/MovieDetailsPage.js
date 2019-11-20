@@ -71,7 +71,7 @@ export default class ShowDetailsPage extends Component {
     )}
         <h3>More iInformation</h3>
         <ul className={styles.list}>
-          <li >
+          <li>
             <Link
               to={{
                 pathname: `${match.url}/cast`,

@@ -58,7 +58,7 @@ export default class ShowMoviesPage extends Component {
   };
   
   render() {
-    const { location } = this.props;
+    const { location, match } = this.props;
 
     return (
       <div>
@@ -73,7 +73,7 @@ export default class ShowMoviesPage extends Component {
             <li key={show.id} className={styles.list}>         
               <Link 
                to={{
-                pathname: `${routes.MOVIE_PAGE}/${show.id}`,
+                pathname: `${match.url}/${show.id}`,
                 state: { from: location },
               }}
               >
