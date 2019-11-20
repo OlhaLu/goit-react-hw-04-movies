@@ -8,6 +8,7 @@ import styles from './MovieDetailsPage.module.css';
 
 export default class ShowDetailsPage extends Component {
   state = {
+    shows: null,
   };
 
   componentDidMount() {
