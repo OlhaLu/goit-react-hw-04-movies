@@ -1,28 +1,27 @@
 .button {
-    background-color: #158f60;
-    border: none;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
+  background-color: #158f60;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
-  .header {
-    text-align: center;
-    color: #0c7c51;
-    font-weight: bold;
-    font-size: 36px;
-  }
+.header {
+  text-align: center;
+  color: #0c7c51;
+  font-weight: bold;
+  font-size: 36px;
+}
 
-  .list {
-    line-height: 2rem;
-    color: white;
-    text-align: left;
-    margin-right: 0.5rem;
-    list-style-type: none;
-   
+.list {
+  line-height: 2rem;
+  color: white;
+  text-align: left;
+  margin-right: 0.5rem;
+  list-style-type: none;
 }
 
 .list a {

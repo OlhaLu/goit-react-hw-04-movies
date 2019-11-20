@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './SearchMovies.module.css'
+import styles from './SearchMovies.module.css';
 
 export default class SearchMovies extends Component {
   state = { value: '' };
@@ -19,16 +19,17 @@ export default class SearchMovies extends Component {
     const { value } = this.state;
     return (
       <form onSubmit={this.onSubmit}>
-        <input 
-        className={styles.input}
-        type="text" 
-        value={value} 
-        autoComplete="off" 
-        placeholder="Search  movies..."
-        onChange={this.onChange} />
-        <button 
-        className={styles.submit}
-        type="submit">Search...</button>
+        <input
+          className={styles.input}
+          type="text"
+          value={value}
+          autoComplete="off"
+          placeholder="Search  movies..."
+          onChange={this.onChange}
+        />
+        <button className={styles.submit} type="submit">
+          Search...
+        </button>
       </form>
     );
   }

@@ -14,9 +14,9 @@ const App = () => (
         <Route exact path={routes.HOME_PAGE} component={HomePage} />
         <Route path={routes.MOVIE_DETAILS_PAGE} component={MovieDetailsPage} />
         <Route path={routes.MOVIES_PAGE} component={MoviesPage} />
-        <Redirect to='/'/>
+        <Redirect to="/" />
       </Switch>
-    </div> 
+    </div>
   </BrowserRouter>
 );
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import tvApiService from '../../services/tv-api-service';
-import styles from './Reviews.module.css'
+import styles from './Reviews.module.css';
 
 export default class Reviews extends Component {
   state = {
@@ -21,7 +21,7 @@ export default class Reviews extends Component {
 
   render() {
     const { reviews } = this.state;
-  
+
     return (
       <>
         {reviews && (

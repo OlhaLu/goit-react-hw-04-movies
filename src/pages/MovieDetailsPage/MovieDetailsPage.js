@@ -34,7 +34,7 @@ export default class ShowDetailsPage extends Component {
   handleGoHomePage = () => {
     const { state } = this.props.location;
     const { history } = this.props;
-    
+
     if (state) {
       this.props.history.push(state.from);
       return;
@@ -49,26 +49,31 @@ export default class ShowDetailsPage extends Component {
 
     return (
       <div>
-        <button className={styles.button}
-        type="button" onClick={this.handleGoHomePage}>
-        <span> Go Home Page</span>
+        <button
+          className={styles.button}
+          type="button"
+          onClick={this.handleGoHomePage}
+        >
+          <span> Go Home Page</span>
         </button>
         <h2>Movies Details</h2>
-    {shows && (
-      <>
-      <img className={styles.img}
-      src={`https://image.tmdb.org/t/p/w300/${shows.poster_path}`} 
-      width="280" 
-      alt={shows.title} />
-      <h3>{shows.original_title}</h3>
-      <p>User score: {shows.popularity * 1}%</p>
-      <h3>Overview</h3>
-      <p>{shows.overview}</p>
-      <h3>Genres</h3>
-      <p>{shows.genres.map(item => `${item.name} `)}</p>
-      <p>{match.params.showId}</p>
-      </>
-    )}
+        {shows && (
+          <>
+            <img
+              className={styles.img}
+              src={`https://image.tmdb.org/t/p/w300/${shows.poster_path}`}
+              width="280"
+              alt={shows.title}
+            />
+            <h3>{shows.original_title}</h3>
+            <p>User score: {shows.popularity * 1}%</p>
+            <h3>Overview</h3>
+            <p>{shows.overview}</p>
+            <h3>Genres</h3>
+            <p>{shows.genres.map(item => `${item.name} `)}</p>
+            <p>{match.params.showId}</p>
+          </>
+        )}
         <h3>Click for more information about film</h3>
         <ul className={styles.list}>
           <li>
@@ -93,14 +98,8 @@ export default class ShowDetailsPage extends Component {
           </li>
         </ul>
         <Switch>
-        <Route
-          path={`${match.path}/cast`}
-          component={Cast}
-        />
-        <Route
-          path={`${match.path}/reviews`}
-          component={Reviews}
-        />
+          <Route path={`${match.path}/cast`} component={Cast} />
+          <Route path={`${match.path}/reviews`} component={Reviews} />
         </Switch>
       </div>
     );

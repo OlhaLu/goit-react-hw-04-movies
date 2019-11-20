@@ -1,16 +1,16 @@
 .header {
-    text-align: center;
-    color: #0c7c51;
-    font-weight: bold;
-    font-size: 36px;
-  }
+  text-align: center;
+  color: #0c7c51;
+  font-weight: bold;
+  font-size: 36px;
+}
 
-  .list {
-    line-height: 2rem;
-    color: white;
-    text-align: left;
-    margin-right: 0.5rem;
-    list-style-type: none
+.list {
+  line-height: 2rem;
+  color: white;
+  text-align: left;
+  margin-right: 0.5rem;
+  list-style-type: none;
 }
 
 .list a {

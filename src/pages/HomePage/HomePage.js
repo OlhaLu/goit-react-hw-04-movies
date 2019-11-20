@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import routes from '../../routes';
 import tvApiService from '../../services/tv-api-service';
-import styles from './HomePage.module.css'
+import styles from './HomePage.module.css';
 
 export default class HomePage extends Component {
   state = {
@@ -31,12 +31,12 @@ export default class HomePage extends Component {
         <ul>
           {shows.map(show => (
             <li key={show.id} className={styles.list}>
-              <Link 
-               to={{
-                pathname: `${routes.MOVIES_PAGE}/${show.id}`,
-                state: { from: location },
-              }}
-                >
+              <Link
+                to={{
+                  pathname: `${routes.MOVIES_PAGE}/${show.id}`,
+                  state: { from: location },
+                }}
+              >
                 {show.title ? show.title : show.name}
               </Link>
             </li>

@@ -19,7 +19,7 @@ export default class ShowMoviesPage extends Component {
     if (!queryParams.query) {
       return;
     }
-  
+
     tvApiService.searchMovies(queryParams.query).then(value => {
       this.setState({ value });
     });
@@ -48,7 +48,7 @@ export default class ShowMoviesPage extends Component {
   handleGoHomePage = () => {
     const { state } = this.props.location;
     const { history } = this.props;
-    
+
     if (state) {
       this.props.history.push(state.from);
       return;
@@ -56,28 +56,31 @@ export default class ShowMoviesPage extends Component {
 
     history.push(`${routes.HOME_PAGE}`);
   };
-  
+
   render() {
     const { location, match } = this.props;
 
     return (
       <div>
-        <button className={styles.button}
-        type="button" onClick={this.handleGoHomePage}>
-        <span> Go Home Page</span>
+        <button
+          className={styles.button}
+          type="button"
+          onClick={this.handleGoHomePage}
+        >
+          <span> Go Home Page</span>
         </button>
         <h2 className={styles.header}>Movies Catalog</h2>
         <SearchMovies onSearch={this.setSearchQuery} />
         <ul>
           {this.state.value.map(show => (
-            <li key={show.id} className={styles.list}>         
-              <Link 
-               to={{
-                pathname: `${match.url}/${show.id}`,
-                state: { from: location },
-              }}
+            <li key={show.id} className={styles.list}>
+              <Link
+                to={{
+                  pathname: `${match.url}/${show.id}`,
+                  state: { from: location },
+                }}
               >
-              {show.name ? show.name : show.title}
+                {show.name ? show.name : show.title}
               </Link>
             </li>
           ))}
