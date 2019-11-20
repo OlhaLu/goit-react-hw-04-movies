@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import tvApiService from '../../services/tv-api-service';
+import styles from './Cast.module.css'
 const uniqid = require('uniqid');
 
 export default class Cast extends Component {
@@ -12,7 +13,7 @@ export default class Cast extends Component {
   }
 
   fetchMovieCast = () => {
-    const { movieId } = this.props.match.params.movieId;
+    const { movieId } = this.props.match.params;
 
     tvApiService.getMovieCredits(movieId).then(cast => {
       this.setState({ cast });
@@ -23,23 +24,24 @@ export default class Cast extends Component {
     const { cast } = this.state;
 
     return (
-      <>
+      <section className={styles.cast}>
         {cast && (
-          <ul>
+          <ul className={styles.list}>
             {cast.map(item => (
-              <li key={uniqid()}>
+              <li className={styles.item}
+              key={uniqid()}>
                 <img
                   src={`https://image.tmdb.org/t/p/w300/${item.profile_path}`}
                   alt="actor_profile"
                   width="100"
                 />
-                <h3>{item.name}</h3>
-                <p>{item.character}</p>
+                <p>ACTOR<br/>{item.name}</p>
+                <p>Movie character __ {item.character}</p>
               </li>
             ))}
           </ul>
         )}
-      </>
+      </section>
     );
   }
 }

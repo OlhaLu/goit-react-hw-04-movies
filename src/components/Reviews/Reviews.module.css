@@ -1,0 +1,19 @@
+.discriptions {
+    background: #858383;
+    margin: auto;
+    font-size: 14px;
+    text-align: justify;
+    width: 1200px;
+    list-style-type: none;
+    
+}
+
+.discriptions h3 {
+    font-size: 18px;
+    text-align: left;
+    color: #d9ecee;
+}
+
+.discriptions p {
+    margin-right: 35px;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import Cast from '../../components/Cast/Cast';
 import Reviews from '../../components/Reviews/Reviews';
 import routes from '../../routes';
@@ -61,15 +61,15 @@ export default class ShowDetailsPage extends Component {
       width="280" 
       alt={shows.title} />
       <h3>{shows.original_title}</h3>
-      <p>User score: {shows.popularity}%</p>
+      <p>User score: {shows.popularity * 1}%</p>
       <h3>Overview</h3>
       <p>{shows.overview}</p>
       <h3>Genres</h3>
-      <p>{shows.genres.map(item => ` ${item.name} `)}</p>
+      <p>{shows.genres.map(item => `${item.name} `)}</p>
       <p>{match.params.showId}</p>
       </>
     )}
-        <h3>More iInformation</h3>
+        <h3>Click for more information about film</h3>
         <ul className={styles.list}>
           <li>
             <Link
@@ -92,7 +92,7 @@ export default class ShowDetailsPage extends Component {
             </Link>
           </li>
         </ul>
-
+        <Switch>
         <Route
           path={`${match.path}/cast`}
           component={Cast}
@@ -101,6 +101,7 @@ export default class ShowDetailsPage extends Component {
           path={`${match.path}/reviews`}
           component={Reviews}
         />
+        </Switch>
       </div>
     );
   }

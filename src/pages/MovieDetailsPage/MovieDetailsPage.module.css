@@ -24,12 +24,12 @@
 
   h3 {
     color: #112d63;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .list {
     line-height: 2rem;
-    color: white;
+    list-style-type: none;
     text-align: left;
     display: flex;
     padding: 0;
