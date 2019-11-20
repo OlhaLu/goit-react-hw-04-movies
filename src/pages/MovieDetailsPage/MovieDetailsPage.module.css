@@ -8,3 +8,31 @@
     display: inline-block;
     font-size: 16px;
   }
+
+  .img {
+    float: left;
+    padding: 0 15px;
+    
+  }
+
+  h2 {
+    color: #740805;
+    font-size: 24px;
+  }
+
+  h3 {
+    color: #112d63;
+    font-size: 18px;
+  }
+
+  .list {
+    line-height: 2rem;
+    color: white;
+    text-align: left;
+}
+
+.list a {
+  color: #082e20;
+  text-decoration: none;
+  font-size: 14px;
+}

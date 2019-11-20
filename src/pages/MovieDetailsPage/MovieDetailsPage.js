@@ -8,7 +8,6 @@ import styles from './MovieDetailsPage.module.css';
 
 export default class ShowDetailsPage extends Component {
   state = {
-    shows: null,
   };
 
   componentDidMount() {
@@ -53,10 +52,10 @@ export default class ShowDetailsPage extends Component {
         type="button" onClick={this.handleGoHomePage}>
         <span> Go Home Page</span>
         </button>
-        <h2>Show Movies Details</h2>
+        <h2>Movies Details</h2>
     {shows && (
       <>
-      <img
+      <img className={styles.img}
       src={`https://image.tmdb.org/t/p/w300/${shows.poster_path}`} 
       width="280" 
       alt={shows.title} />
@@ -69,9 +68,9 @@ export default class ShowDetailsPage extends Component {
       <p>{match.params.showId}</p>
       </>
     )}
-        <h2>More iInformation</h2>
-        <ul>
-          <li>
+        <h3>More iInformation</h3>
+        <ul className={styles.list}>
+          <li >
             <Link
               to={{
                 pathname: `${match.url}/cast`,
