@@ -54,7 +54,7 @@ export default class ShowDetailsPage extends Component {
           type="button"
           onClick={this.handleGoHomePage}
         >
-          <span> Go Home Page</span>
+          <span> Go Prev Page</span>
         </button>
         <h2>Movies Details</h2>
         {shows && (
