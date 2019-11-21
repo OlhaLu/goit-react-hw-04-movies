@@ -66,7 +66,7 @@ export default class ShowDetailsPage extends Component {
               alt={shows.title}
             />
             <h3>{shows.original_title}</h3>
-            <p>User score: {shows.popularity * 1}%</p>
+            <p>User score: {shows.popularity.toFixed(1)}%</p>
             <h3>Overview</h3>
             <p>{shows.overview}</p>
             <h3>Genres</h3>
