@@ -62,13 +62,6 @@ export default class ShowMoviesPage extends Component {
 
     return (
       <div>
-        <button
-          className={styles.button}
-          type="button"
-          onClick={this.handleGoHomePage}
-        >
-          <span> Go Home Page</span>
-        </button>
         <h2 className={styles.header}>Movies Catalog</h2>
         <SearchMovies onSearch={this.setSearchQuery} />
         <ul>
