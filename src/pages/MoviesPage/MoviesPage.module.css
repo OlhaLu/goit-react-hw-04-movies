@@ -5,12 +5,17 @@
   font-size: 36px;
 }
 
+.searchList {
+  column-count: 3;
+}
+
 .list {
   line-height: 2rem;
   color: white;
   text-align: left;
   margin-right: 0.5rem;
   list-style-type: none;
+  width: 50%;
 }
 
 .list a {

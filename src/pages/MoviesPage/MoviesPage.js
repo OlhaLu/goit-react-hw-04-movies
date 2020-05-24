@@ -64,7 +64,7 @@ export default class ShowMoviesPage extends Component {
       <div>
         <h2 className={styles.header}>Movies Catalog</h2>
         <SearchMovies onSearch={this.setSearchQuery} />
-        <ul>
+        <ul className={styles.searchList}>
           {this.state.value.map(show => (
             <li key={show.id} className={styles.list}>
               <Link
@@ -74,6 +74,11 @@ export default class ShowMoviesPage extends Component {
                 }}
               >
                 {show.name ? show.name : show.title}
+                <img
+                  src={`https://image.tmdb.org/t/p/w300/${show.poster_path}`}
+                  width="280"
+                  alt={show.title}
+                />
               </Link>
             </li>
           ))}
