@@ -24,11 +24,11 @@ export default class SearchMovies extends Component {
           type="text"
           value={value}
           autoComplete="off"
-          placeholder="Search  movies..."
+          placeholder="Search ..."
           onChange={this.onChange}
         />
         <button className={styles.submit} type="submit">
-          Search...
+          Find ...
         </button>
       </form>
     );

@@ -38,9 +38,10 @@ export default class HomePage extends Component {
                 }}
               >
                 {show.title ? show.title : show.name}
+                {show.release_date}
                 <img
                   src={`https://image.tmdb.org/t/p/w300/${show.poster_path}`}
-                  width="280"
+                  width="350"
                   alt={show.title}
                 />
               </Link>

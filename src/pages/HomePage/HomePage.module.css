@@ -5,13 +5,17 @@
   font-size: 36px;
 }
 
+.listFilms {
+  columns: 4;
+}
+
 .list {
   line-height: 2rem;
   color: white;
   text-align: left;
   margin-right: 0.5rem;
   list-style-type: none;
-  width: 50%;
+  border: solid green 2px;
 }
 
 .list a {
@@ -19,8 +23,4 @@
   font-size: 18px;
   text-decoration: none;
   list-style-type: none;
-}
-
-.listFilms {
-  column-count: 4;
 }
