@@ -11,6 +11,7 @@
   text-align: left;
   margin-right: 0.5rem;
   list-style-type: none;
+  width: 50%;
 }
 
 .list a {
@@ -18,4 +19,8 @@
   font-size: 18px;
   text-decoration: none;
   list-style-type: none;
+}
+
+.listFilms {
+  column-count: 4;
 }

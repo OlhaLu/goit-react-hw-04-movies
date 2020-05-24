@@ -28,7 +28,7 @@ export default class HomePage extends Component {
     return (
       <>
         <h2 className={styles.header}>Trending Movies for a Week</h2>
-        <ul>
+        <ul className={styles.listFilms}>
           {shows.map(show => (
             <li key={show.id} className={styles.list}>
               <Link
@@ -38,6 +38,11 @@ export default class HomePage extends Component {
                 }}
               >
                 {show.title ? show.title : show.name}
+                <img
+                  src={`https://image.tmdb.org/t/p/w300/${show.poster_path}`}
+                  width="280"
+                  alt={show.title}
+                />
               </Link>
             </li>
           ))}
