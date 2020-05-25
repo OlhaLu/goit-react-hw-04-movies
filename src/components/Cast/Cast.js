@@ -29,17 +29,21 @@ export default class Cast extends Component {
           <ul className={styles.list}>
             {cast.map(item => (
               <li className={styles.item} key={uniqid()}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w300/${item.profile_path}`}
-                  alt="actor_profile"
-                  width="100"
-                />
                 <p>
                   ACTOR
                   <br />
                   {item.name}
                 </p>
                 <p>Movie character __ {item.character}</p>
+                <img
+                  src={`${
+                    item.profile_path === null
+                      ? 'http://placehold.it/150x100'
+                      : 'https://image.tmdb.org/t/p/w300/' + item.profile_path
+                  }`}
+                  alt="actor_profile"
+                  width="100"
+                />
               </li>
             ))}
           </ul>

@@ -7,15 +7,13 @@
 .list {
   margin: 0 auto;
   border: 2px #e7eefa solid;
-  column-count: 2;
+  /* column-count: 3; */
 }
 
 .item {
-  display: flex;
   padding: 5px;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  width: 500px;
+  height: 300px;
 }
 
 .item img {
