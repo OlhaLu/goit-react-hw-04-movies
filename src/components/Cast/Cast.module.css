@@ -5,15 +5,15 @@
 }
 
 .list {
-  margin: 0 auto;
+  text-align: center;
   border: 2px #e7eefa solid;
-  /* column-count: 3; */
+  column-count: 3;
 }
 
 .item {
-  padding: 5px;
-  width: 500px;
-  height: 300px;
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px;
 }
 
 .item img {
