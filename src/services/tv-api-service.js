@@ -70,10 +70,39 @@ const getMovieReviews = movieId =>
       throw err;
     });
 
+const searchActors = query =>
+  fetch(
+    `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&query=${query}`,
+  )
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      }
+      throw new Error('not found');
+    })
+    .then(data => data.results)
+    .catch(err => {
+      throw err;
+    });
+
+const getActorDetails = actorId =>
+  fetch(`https://api.themoviedb.org/3/person/${actorId}?api_key=${apiKey}`)
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      }
+      throw new Error('not found');
+    })
+    .catch(err => {
+      throw err;
+    });
+
 export default {
   getTrending,
   searchMovies,
   getMovieDetails,
   getMovieCredits,
   getMovieReviews,
+  searchActors,
+  getActorDetails,
 };

@@ -13,6 +13,9 @@ const Navigation = () => (
     <li className={styles.item}>
       <NavLink to={routes.MOVIES_PAGE}>Movies</NavLink>
     </li>
+    <li className={styles.item}>
+      <NavLink to={routes.ACTORS_PAGE}>Actors</NavLink>
+    </li>
   </ul>
 );
 
