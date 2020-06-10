@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
 import tvApiService from '../../services/tv-api-service';
 import styles from './ActorDetailPage.module.css';
 
@@ -35,18 +34,25 @@ export default class ActorDetailPage extends Component {
       <div>
         <h2 className={styles.title}>More Information about Actor</h2>
         {value && (
-          <>
+          <div className={styles.detailsContainer}>
             <img
+              className={styles.img}
               src={`https://image.tmdb.org/t/p/w300/${value.profile_path}`}
-              width="250"
+              width="300"
               alt={value.title}
             />
-            <h3>Popularity</h3>
-            <p>{value.popularity}</p>
-            <h3>From</h3>
-            <p>{value.place_of_birth}</p>
-            <h3>{value.biography}</h3>
-          </>
+            <div className={styles.discriptions}>
+              <h3>Popularity</h3>
+              <p>{value.popularity}</p>
+              <h3>Place of birth</h3>
+              <p>{value.place_of_birth}</p>
+              <h3>Birthday</h3>
+              <p>{value.birthday}</p>
+              <h3>Biography</h3>
+              <p>{value.biography}</p>
+              <p>{value.homepage}</p>
+            </div>
+          </div>
         )}
       </div>
     );

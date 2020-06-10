@@ -61,9 +61,14 @@ export default class ShowActorsPage extends Component {
                 }}
               >
                 {person.name ? person.name : person.title}
+                <br />
                 <img
-                  src={`https://image.tmdb.org/t/p/w300/${person.profile_path}`}
-                  width="100"
+                  src={`${
+                    person.profile_path === null
+                      ? 'http://placehold.it/150x200'
+                      : 'https://image.tmdb.org/t/p/w300/' + person.profile_path
+                  }`}
+                  width="150"
                   alt={person.title}
                 />
               </Link>
